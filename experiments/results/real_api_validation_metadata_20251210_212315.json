@@ -1,0 +1,26 @@
+{
+  "timestamp": "20251210_212315",
+  "agent_used": "experiments/models/qlearning_agent_20251209_021550.pkl",
+  "episodes_per_difficulty": 5,
+  "total_episodes": 15,
+  "results": {
+    "easy": {
+      "success_rate": 60.0,
+      "avg_reward": 88.4,
+      "avg_turns": 4.8,
+      "total_episodes": 5
+    },
+    "medium": {
+      "success_rate": 0.0,
+      "avg_reward": -28.2,
+      "avg_turns": 10.0,
+      "total_episodes": 5
+    },
+    "hard": {
+      "success_rate": 0.0,
+      "avg_reward": -29.8,
+      "avg_turns": 10.0,
+      "total_episodes": 5
+    }
+  }
+}

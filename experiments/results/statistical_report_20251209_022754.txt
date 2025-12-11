@@ -1,0 +1,116 @@
+================================================================================
+STATISTICAL ANALYSIS REPORT
+================================================================================
+
+
+################################################################################
+# EASY DIFFICULTY
+################################################################################
+
+REWARD STATISTICS:
+--------------------------------------------------------------------------------
+Q-Learning  : Mean= 178.49 ±  24.49 | 95% CI=[173.63, 183.35]
+UCB         : Mean= 180.75 ±  24.67 | 95% CI=[175.85, 185.65]
+Random      : Mean= 181.59 ±  25.29 | 95% CI=[176.57, 186.60]
+
+SUCCESS RATE STATISTICS:
+--------------------------------------------------------------------------------
+Q-Learning  : 100.0% (100/100) | 95% CI=[100.0%, 100.0%]
+UCB         : 100.0% (100/100) | 95% CI=[100.0%, 100.0%]
+Random      : 100.0% (100/100) | 95% CI=[100.0%, 100.0%]
+
+PAIRWISE T-TESTS (Reward):
+--------------------------------------------------------------------------------
+Q-Learning vs UCB:
+  No significant difference between Q-Learning and UCB (p=0.5164)
+  Mean difference: -2.26
+
+Q-Learning vs Random:
+  No significant difference between Q-Learning and Random (p=0.3804)
+  Mean difference: -3.09
+
+UCB vs Random:
+  No significant difference between UCB and Random (p=0.8134)
+  Mean difference: -0.84
+
+PROPORTION TESTS (Success Rate):
+--------------------------------------------------------------------------------
+Q-Learning vs UCB:
+  Difference: 0.0 percentage points
+  p-value: 1.0000 (not significant)
+
+
+################################################################################
+# MEDIUM DIFFICULTY
+################################################################################
+
+REWARD STATISTICS:
+--------------------------------------------------------------------------------
+Q-Learning  : Mean= 179.10 ±  25.16 | 95% CI=[174.11, 184.10]
+UCB         : Mean= 178.09 ±  26.18 | 95% CI=[172.90, 183.29]
+Random      : Mean= 179.60 ±  25.34 | 95% CI=[174.58, 184.63]
+
+SUCCESS RATE STATISTICS:
+--------------------------------------------------------------------------------
+Q-Learning  : 100.0% (100/100) | 95% CI=[100.0%, 100.0%]
+UCB         : 100.0% (100/100) | 95% CI=[100.0%, 100.0%]
+Random      : 100.0% (100/100) | 95% CI=[100.0%, 100.0%]
+
+PAIRWISE T-TESTS (Reward):
+--------------------------------------------------------------------------------
+Q-Learning vs UCB:
+  No significant difference between Q-Learning and UCB (p=0.7812)
+  Mean difference: 1.01
+
+Q-Learning vs Random:
+  No significant difference between Q-Learning and Random (p=0.8888)
+  Mean difference: -0.50
+
+UCB vs Random:
+  No significant difference between UCB and Random (p=0.6790)
+  Mean difference: -1.51
+
+PROPORTION TESTS (Success Rate):
+--------------------------------------------------------------------------------
+Q-Learning vs UCB:
+  Difference: 0.0 percentage points
+  p-value: 1.0000 (not significant)
+
+
+################################################################################
+# HARD DIFFICULTY
+################################################################################
+
+REWARD STATISTICS:
+--------------------------------------------------------------------------------
+Q-Learning  : Mean= 137.62 ±  89.53 | 95% CI=[119.85, 155.38]
+UCB         : Mean= 166.31 ±  58.79 | 95% CI=[154.64, 177.97]
+Random      : Mean= 125.95 ±  88.25 | 95% CI=[108.45, 143.46]
+
+SUCCESS RATE STATISTICS:
+--------------------------------------------------------------------------------
+Q-Learning  :  79.0% (79/100) | 95% CI=[71.0%, 87.0%]
+UCB         :  94.0% (94/100) | 95% CI=[89.0%, 98.0%]
+Random      :  77.0% (77/100) | 95% CI=[69.0%, 85.0%]
+
+PAIRWISE T-TESTS (Reward):
+--------------------------------------------------------------------------------
+Q-Learning vs UCB:
+  UCB significantly outperforms (p=0.0080, d=-0.381, small effect)
+  Mean difference: -28.69
+
+Q-Learning vs Random:
+  No significant difference between Q-Learning and Random (p=0.3548)
+  Mean difference: 11.66
+
+UCB vs Random:
+  UCB significantly outperforms (p=0.0002, d=0.541, medium effect)
+  Mean difference: 40.35
+
+PROPORTION TESTS (Success Rate):
+--------------------------------------------------------------------------------
+Q-Learning vs UCB:
+  Difference: -15.0 percentage points
+  p-value: 0.0019 (significant)
+
+================================================================================

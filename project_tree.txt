@@ -1,0 +1,94 @@
+.
+├── experiments
+│   ├── logs
+│   ├── models
+│   │   ├── agent_all_difficulties_20251209_013212.pkl
+│   │   ├── agent_easy_20251209_012735.pkl
+│   │   ├── qlearning_agent_20251209_021550.pkl
+│   │   └── ucb_agent_20251209_021550.pkl
+│   └── results
+│       ├── comparison_table_20251209_022754.csv
+│       ├── metadata_20251209_012735.json
+│       ├── metadata_complete_20251209_013212.json
+│       ├── metadata_complete_20251209_021550.json
+│       ├── qlearning_easy_20251209_021550.csv
+│       ├── qlearning_hard_20251209_021550.csv
+│       ├── qlearning_medium_20251209_021550.csv
+│       ├── simulation_easy_20251209_012735.csv
+│       ├── simulation_easy_20251209_013212.csv
+│       ├── simulation_hard_20251209_013212.csv
+│       ├── simulation_medium_20251209_013212.csv
+│       ├── statistical_report_20251209_022754.txt
+│       ├── ucb_easy_20251209_021550.csv
+│       ├── ucb_hard_20251209_021550.csv
+│       └── ucb_medium_20251209_021550.csv
+├── src
+│   ├── __init__.py
+│   ├── agent.py
+│   ├── attack_generator.py
+│   ├── controller.py
+│   ├── environment.py
+│   ├── safety_judge.py
+│   ├── simulator.py
+│   ├── statistical_analysis.py
+│   ├── target_bot.py
+│   ├── ucb_agent.py
+│   └── utils.py
+├── tests
+│   ├── test_attacks.py
+│   ├── test_dual_mode.py
+│   ├── test_env.py
+│   ├── test_judge.py
+│   ├── test_simulator.py
+│   ├── test_target.py
+│   ├── test_ucb.py
+│   └── test_utils.py
+├── visualizations
+│   └── figures
+│       ├── comparison_20251209_012735.png
+│       ├── comparison_all_agents_easy_20251209_021550.png
+│       ├── comparison_all_agents_hard_20251209_021550.png
+│       ├── comparison_all_agents_medium_20251209_021550.png
+│       ├── comparison_easy_20251209_013212.png
+│       ├── comparison_hard_20251209_013212.png
+│       ├── comparison_medium_20251209_013212.png
+│       ├── cross_difficulty_20251209_013212.png
+│       ├── cross_difficulty_qlearning_20251209_021550.png
+│       ├── cross_difficulty_ucb_20251209_021550.png
+│       ├── heatmap_easy_20251209_013212.png
+│       ├── heatmap_hard_20251209_013212.png
+│       ├── heatmap_medium_20251209_013212.png
+│       ├── heatmap_qlearning_easy_20251209_021550.png
+│       ├── heatmap_qlearning_hard_20251209_021550.png
+│       ├── heatmap_qlearning_medium_20251209_021550.png
+│       ├── heatmap_ucb_easy_20251209_021550.png
+│       ├── heatmap_ucb_hard_20251209_021550.png
+│       ├── heatmap_ucb_medium_20251209_021550.png
+│       ├── learning_curves_easy_20251209_013212.png
+│       ├── learning_curves_hard_20251209_013212.png
+│       ├── learning_curves_medium_20251209_013212.png
+│       ├── learning_curves_qlearning_easy_20251209_021550.png
+│       ├── learning_curves_qlearning_hard_20251209_021550.png
+│       ├── learning_curves_qlearning_medium_20251209_021550.png
+│       ├── learning_curves_sim_20251209_012735.png
+│       ├── learning_curves_ucb_easy_20251209_021550.png
+│       ├── learning_curves_ucb_hard_20251209_021550.png
+│       ├── learning_curves_ucb_medium_20251209_021550.png
+│       ├── q_table_20251209_012735.png
+│       ├── q_table_20251209_021550.png
+│       ├── q_table_final_20251209_013212.png
+│       ├── statistical_comparison_easy_20251209_022754.png
+│       ├── statistical_comparison_hard_20251209_022754.png
+│       ├── statistical_comparison_medium_20251209_022754.png
+│       └── vulnerability_heatmap_20251209_012735.png
+├── check_api.py
+├── config.py
+├── demo.py
+├── interact_with_agent.py
+├── project_structure.md
+├── project_tree.txt
+├── requirements.txt
+├── run_statistics.py
+└── train_agent.py
+
+9 directories, 83 files

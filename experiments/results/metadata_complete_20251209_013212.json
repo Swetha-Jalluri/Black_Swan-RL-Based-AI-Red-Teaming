@@ -1,0 +1,70 @@
+{
+  "timestamp": "20251209_013212",
+  "train_episodes_per_difficulty": 100,
+  "validate_episodes_per_difficulty": 0,
+  "difficulties_trained": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "config": {
+    "api": {
+      "attack_model": "gemini-2.5-flash",
+      "target_model": "gemini-2.5-flash",
+      "judge_model": "gemini-2.5-flash",
+      "rpm_limit": 4
+    },
+    "environment": {
+      "max_turns": 10,
+      "state_size": 150,
+      "action_size": 5
+    },
+    "agent": {
+      "learning_rate": 0.1,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_decay": 0.995
+    }
+  },
+  "results": {
+    "easy": {
+      "simulation": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 181.585,
+        "avg_turns": 1.39
+      },
+      "baseline": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 182.76
+      }
+    },
+    "medium": {
+      "simulation": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 179.605,
+        "avg_turns": 1.87
+      },
+      "baseline": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 177.98
+      }
+    },
+    "hard": {
+      "simulation": {
+        "total_episodes": 100,
+        "success_rate": 77.0,
+        "avg_reward": 125.955,
+        "avg_turns": 4.6103896103896105
+      },
+      "baseline": {
+        "total_episodes": 100,
+        "success_rate": 83.0,
+        "avg_reward": 145.02
+      }
+    }
+  }
+}

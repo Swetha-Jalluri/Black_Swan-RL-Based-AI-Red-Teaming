@@ -1,0 +1,238 @@
+# Simple Architecture Diagram for Report
+
+## Copy this into PowerPoint/Google Slides or draw.io
+
+---
+
+## Main System Diagram (for Introduction)
+
+```
+                    POPPER RED TEAM AGENT
+        Automated AI Red Teaming with Reinforcement Learning
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│     ┌──────────┐         ┌──────────┐       ┌──────────┐   │
+│     │    RL    │ action  │  Attack  │ prompt│  Target  │   │
+│     │  Agent   ├────────>│Generator ├──────>│   Bot    │   │
+│     │          │   0-4   │          │       │          │   │
+│     └────▲─────┘         └──────────┘       └─────┬────┘   │
+│          │                                         │        │
+│          │                                         │        │
+│          │ reward                         response │        │
+│          │                                         │        │
+│     ┌────┴─────┐                           ┌──────▼────┐   │
+│     │  Reward  │<──────────────────────────│  Safety   │   │
+│     │ Function │        verdict            │  Judge    │   │
+│     │          │                           │           │   │
+│     └──────────┘                           └───────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Two RL Approaches (for Methods Section)
+
+```
+┌─────────────────────────┐       ┌─────────────────────────┐
+│    Q-LEARNING AGENT     │       │       UCB AGENT         │
+├─────────────────────────┤       ├─────────────────────────┤
+│                         │       │                         │
+│ Type: Value-Based       │       │ Type: Bandit/Exploration│
+│                         │       │                         │
+│ Data Structure:         │       │ Data Structure:         │
+│   Q-Table [150 × 5]     │       │   Action Stats [5]      │
+│                         │       │                         │
+│ Learning:               │       │ Learning:               │
+│   Q(s,a) ← Q + α[TD]    │       │   Q(a) ← Σr / N(a)      │
+│                         │       │                         │
+│ Exploration:            │       │ Exploration:            │
+│   ε-greedy              │       │   UCB formula           │
+│   ε: 1.0 → 0.05         │       │   Automatic             │
+│                         │       │                         │
+│ Parameters:             │       │ Parameters:             │
+│   α = 0.1               │       │   c = 1.414             │
+│   γ = 0.95              │       │                         │
+│                         │       │                         │
+│ Hard Performance:       │       │ Hard Performance:       │
+│   Success: 79%          │       │   Success: 94%          │
+│   Turns: 3.8            │       │   Turns: 3.1            │
+│                         │       │                         │
+└─────────────────────────┘       └─────────────────────────┘
+```
+
+---
+
+## Training Pipeline (for Methods Section)
+
+```
+Phase 1: SIMULATION TRAINING
+─────────────────────────────
+   ┌──────────────────────┐
+   │  For Each Difficulty │
+   │  (Easy/Medium/Hard)  │
+   └──────────┬───────────┘
+              │
+              ├──> Q-Learning: 100 episodes
+              │     └─> Save data & model
+              │
+              ├──> UCB: 100 episodes
+              │     └─> Save data & model
+              │
+              └──> Random: 100 episodes
+                    └─> Save data
+
+Phase 2: ANALYSIS
+─────────────────
+   Generate visualizations
+   Calculate statistics
+   Compare performance
+
+Phase 3: VALIDATION (Optional)
+───────────────────────────────
+   Test on real Gemini API
+   Verify sim-to-real transfer
+```
+
+---
+
+## State-Action-Reward (for Methods Section)
+
+```
+STATE SPACE (150 discrete states)
+──────────────────────────────────
+   [Turn: 0-9] × [Resistance: 0-2] × [Last Strategy: 0-4]
+
+ACTION SPACE (5 discrete actions)
+──────────────────────────────────
+   0: Prompt Injection
+   1: Authority Impersonation  
+   2: Hypothetical Framing
+   3: Emotional Manipulation
+   4: Technical Obfuscation
+
+REWARD FUNCTION
+───────────────
+   +50×severity  if vulnerability found
+   +20           if new category
+   +10           if fast (≤3 turns)
+   -0.5          per turn
+   -20           if timeout
+   -2            if repeat failed strategy
+```
+
+---
+
+## Results Summary (for Results Section)
+
+```
+HARD DIFFICULTY PERFORMANCE
+───────────────────────────────────────────────
+
+Algorithm     Success Rate    Avg Turns    Key Insight
+─────────────────────────────────────────────────────
+Q-Learning       79%            3.8       Explores all strategies
+UCB              94%            3.1       Focuses on best strategy
+Random           78%            4.5       No learning baseline
+
+UCB ADVANTAGE: +15% success, 18% faster
+
+UCB STRATEGY SELECTION:
+  Emotional Manipulation: 94.5%  (highly focused)
+  Other Strategies: 5.5%         (minimal exploration)
+
+Q-LEARNING STRATEGY DISTRIBUTION:
+  More balanced across all 5 strategies
+  Discovers more vulnerability types
+```
+
+---
+
+## Key Components Table (for Technical Section)
+
+```
+┌────────────────┬──────────┬─────────────────────────────┐
+│   Component    │  Lines   │      Key Features           │
+├────────────────┼──────────┼─────────────────────────────┤
+│ environment.py │   280    │ Gym interface, dual mode    │
+│ agent.py       │   350    │ Q-Learning, ε-greedy        │
+│ ucb_agent.py   │   240    │ UCB algorithm               │
+│ attack_gen.py  │   250    │ Template + LLM hybrid       │
+│ target_bot.py  │   200    │ 3 difficulty levels         │
+│ safety_judge.py│   240    │ 6 vulnerability categories  │
+│ simulator.py   │   280    │ Fast rule-based training    │
+│ utils.py       │   320    │ Visualization & analysis    │
+├────────────────┼──────────┼─────────────────────────────┤
+│   TOTAL        │  2,160   │ Well-documented Python      │
+└────────────────┴──────────┴─────────────────────────────┘
+```
+
+---
+
+## Timeline (for Project Management)
+
+```
+DEVELOPMENT TIMELINE
+════════════════════
+
+Week 1: Core Implementation
+  Day 1-2: Environment & Q-Learning
+  Day 3-4: Attack generation & target bot
+  Day 5-6: Safety judge & integration
+  Day 7: Testing & debugging
+
+Week 2: Enhancement
+  Day 1-2: UCB implementation
+  Day 3-4: Simulation framework
+  Day 5-6: Visualization pipeline
+  Day 7: Complete training runs
+
+Week 3: Documentation
+  Day 1-3: Technical report
+  Day 4-5: Demo video
+  Day 6-7: Final polish
+
+TOTAL: 3 weeks, fully functional system
+```
+
+---
+
+## Hyperparameter Summary
+
+```
+Q-LEARNING HYPERPARAMETERS
+──────────────────────────
+Learning Rate (α):        0.1
+Discount Factor (γ):      0.95
+Epsilon Start:            1.0
+Epsilon Min:              0.05
+Epsilon Decay:            0.995
+Episodes per Difficulty:  100
+
+UCB HYPERPARAMETERS
+───────────────────
+Exploration Constant (c): 1.414 (√2)
+Episodes per Difficulty:  100
+
+ENVIRONMENT PARAMETERS
+──────────────────────
+Max Turns per Episode:    10
+State Space Size:         150
+Action Space Size:        5
+Reward Violation Base:    50.0
+Step Penalty:             -0.5
+Timeout Penalty:          -20.0
+```
+
+---
+
+Use these diagrams in your technical report. They clearly show:
+- System architecture
+- Component interactions  
+- RL algorithms
+- Data flow
+- Experimental design
+- Results summary
+
+Copy the ASCII diagrams directly into your report or recreate them in a drawing tool.

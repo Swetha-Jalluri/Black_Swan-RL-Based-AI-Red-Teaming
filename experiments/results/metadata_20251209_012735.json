@@ -1,0 +1,37 @@
+{
+  "timestamp": "20251209_012735",
+  "difficulty": "easy",
+  "train_episodes_sim": 100,
+  "validate_episodes_real": 0,
+  "config": {
+    "api": {
+      "attack_model": "gemini-2.5-flash",
+      "target_model": "gemini-2.5-flash",
+      "judge_model": "gemini-2.5-flash",
+      "rpm_limit": 4
+    },
+    "environment": {
+      "max_turns": 10,
+      "state_size": 150,
+      "action_size": 5
+    },
+    "agent": {
+      "learning_rate": 0.1,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_decay": 0.995
+    }
+  },
+  "results": {
+    "simulation": {
+      "total_episodes": 100,
+      "success_rate": 100.0,
+      "avg_reward": 178.965
+    },
+    "baseline": {
+      "total_episodes": 100,
+      "success_rate": 100.0,
+      "avg_reward": 184.015
+    }
+  }
+}

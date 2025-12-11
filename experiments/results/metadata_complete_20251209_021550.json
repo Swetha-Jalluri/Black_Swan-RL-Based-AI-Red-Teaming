@@ -1,0 +1,93 @@
+{
+  "timestamp": "20251209_021550",
+  "train_episodes_per_difficulty": 100,
+  "validate_episodes_per_difficulty": 0,
+  "difficulties_trained": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "rl_approaches": [
+    "Q-Learning",
+    "UCB",
+    "Random"
+  ],
+  "config": {
+    "api": {
+      "attack_model": "gemini-2.5-flash",
+      "target_model": "gemini-2.5-flash",
+      "judge_model": "gemini-2.5-flash",
+      "rpm_limit": 4
+    },
+    "environment": {
+      "max_turns": 10,
+      "state_size": 150,
+      "action_size": 5
+    },
+    "agent": {
+      "learning_rate": 0.1,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_decay": 0.995
+    }
+  },
+  "results": {
+    "easy": {
+      "qlearning": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 178.49,
+        "avg_turns": 1.3
+      },
+      "ucb": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 180.75,
+        "avg_turns": 1.18
+      },
+      "baseline": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 180.625
+      }
+    },
+    "medium": {
+      "qlearning": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 179.105,
+        "avg_turns": 1.91
+      },
+      "ucb": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 178.095,
+        "avg_turns": 1.65
+      },
+      "baseline": {
+        "total_episodes": 100,
+        "success_rate": 100.0,
+        "avg_reward": 180.265
+      }
+    },
+    "hard": {
+      "qlearning": {
+        "total_episodes": 100,
+        "success_rate": 79.0,
+        "avg_reward": 137.615,
+        "avg_turns": 3.7848101265822787
+      },
+      "ucb": {
+        "total_episodes": 100,
+        "success_rate": 94.0,
+        "avg_reward": 166.305,
+        "avg_turns": 3.1382978723404253
+      },
+      "baseline": {
+        "total_episodes": 100,
+        "success_rate": 78.0,
+        "avg_reward": 130.37
+      }
+    }
+  }
+}
